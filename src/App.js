@@ -1,20 +1,36 @@
 import ExpenseItem from "./components/ExpenseItem";
 function App() {
   const expenseDetails = [
-    { item: "Food", location: "Tirupati", price: "$ 50" },
-    { item: "Petrol", location: "Tirupati", price: "$ 100" },
-    { item: "Movie", location: "Chennai", price: "$ 200" },
-    { item: "Shopping", location: "Chennai", price: "$ 300" },
+    {
+      date: new Date(2022, 11, 24),
+      item: "Food",
+      price: "$ 50",
+    },
+    {
+      date: new Date(2022, 11, 25),
+      item: "Petrol",
+      price: "$ 100",
+    },
+    {
+      date: new Date(2022, 11, 27),
+      item: "Movie",
+      price: "$ 200",
+    },
+    {
+      date: new Date(2022, 11, 28),
+      item: "Shopping",
+      price: "$ 300",
+    },
   ];
   return (
     <div>
       <h2>ExpenseItems</h2>
       {expenseDetails.map((expense) => (
         <ExpenseItem
+          date={expense.date}
           item={expense.item}
-          location={expense.location}
           price={expense.price}
-        ></ExpenseItem>
+        />
       ))}
     </div>
   );
